@@ -12,6 +12,9 @@ const controller = {
     get: (req, res, next) => {
         auction
             .findAll({
+                order: [
+                    ['created_at', 'DESC']
+                ],
                 include:[{
                     model: users
                 },{
